@@ -154,10 +154,20 @@ const bondFilms = [
 //I have an object of objects. Each sub-object contains an array. I need to pull the second element in the arrays and add them to a new array, bondTitles. How do I do this? First, I create a new variable, bondTitles, which contains an empty array.
 
 //I've created a for loop to run through
-
+/**
 let bondTitles = [];
 
 for(let i = 0; i < bondFilms.length; i++) {
-  bondTitles.push(bondFilms[i].title)
+  bondTitles.push(bondFilms[i].title);
 }
 console.log(bondTitles);
+**/
+//Hat tip to Alex Thornton to helping me with this one.
+
+let oddBonds = [];
+for(let i = 0; i < bondFilms.length; i++) {
+  if(bondFilms[i].year % 2 != 0) {
+    oddBonds.push(bondFilms[i].title);
+  }
+}
+console.log(oddBonds);
