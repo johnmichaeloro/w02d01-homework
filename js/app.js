@@ -163,7 +163,7 @@ for(let i = 0; i < bondFilms.length; i++) {
 console.log(bondTitles);
 **/
 //Hat tip to Alex Thornton to helping me with this one.
-
+/**
 let oddBonds = [];
 for(let i = 0; i < bondFilms.length; i++) {
   if(bondFilms[i].year % 2 != 0) {
@@ -171,3 +171,17 @@ for(let i = 0; i < bondFilms.length; i++) {
   }
 }
 console.log(oddBonds);
+**/
+//Determine total cumulative gross for Bond Films
+
+let totalGross = 0;
+for(let i = 0; i < bondFilms.length; i++) {
+  bondFilms[i].gross = bondFilms[i].gross.replace("$", "");
+  bondFilms[i].gross = bondFilms[i].gross.replace(",", "");
+  bondFilms[i].gross = bondFilms[i].gross.replace(",", "");
+  bondFilms[i].gross = bondFilms[i].gross.replace(",", "");
+  bondFilms[i].gross = parseInt(bondFilms[i].gross, 10);
+  totalGross = totalGross += bondFilms[i].gross;
+}
+
+console.log(totalGross);
